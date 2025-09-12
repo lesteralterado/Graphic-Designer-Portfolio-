@@ -11,7 +11,7 @@
     --color-foreground: #2d3748; /* gray-700 */
     --color-border: #e2e8f0; /* gray-200 */
     --color-input: #ffffff; /* white */
-    --color-ring: #0066ff; /* blue-600 */
+    --color-ring: #ffa600; /* blue-600 */
     
     /* Card & Surface Colors */
     --color-card: #ffffff; /* white */
@@ -28,7 +28,7 @@
     --color-secondary-foreground: #2d3748; /* gray-700 */
     
     /* Action Colors */
-    --color-accent: #0066ff; /* blue-600 */
+    --color-accent: #ffae00; /* blue-600 */
     --color-accent-foreground: #ffffff; /* white */
     --color-destructive: #ef4444; /* red-500 */
     --color-destructive-foreground: #ffffff; /* white */
@@ -103,6 +103,53 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
+}
+.image-compare {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-compare .before,
+.image-compare .after {
+  width: 100%;
+  height: 100%;
+}
+
+.image-compare .after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  border-right: 2px solid white;
+}
+
+.image-compare:hover .after {
+  width: 0%;
+  transition: width 1.5s ease;
+}
+
+.image-compare:not(:hover) .after {
+  width: 50%;
+  transition: width 1.5s ease;
+}
+.image-caption {
+  position: absolute;
+  top: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.before-caption {
+  right: 10px;
+}
+
+.after-caption {
+  left: 10px;
 }
 
 @layer utilities {

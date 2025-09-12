@@ -157,7 +157,7 @@ const StudioShowcase = () => {
               width="100%"
               height="100%"
               loading="lazy"
-              title="DesignVault Pro Studio Location"
+              title="Alenton Perfect Touch Studio Location"
               referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=40.7589,-73.9851&z=15&output=embed"
               className="border-0"

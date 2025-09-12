@@ -136,7 +136,7 @@ const FAQSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="mailto:hello@designvaultpro.com"
+              href="mailto:brhiajean81@email.com"
               className="inline-flex items-center justify-center px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors duration-200"
             >
               <Icon name="Mail" size={16} className="mr-2" />

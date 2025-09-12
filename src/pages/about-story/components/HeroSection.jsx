@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
+import image1 from '/assets/images/Web_09_DroneShot.jpg';
 
 const HeroSection = () => {
   return (
@@ -67,7 +68,7 @@ const HeroSection = () => {
             >
               <div className="flex items-center space-x-2 text-text-secondary">
                 <Icon name="MapPin" size={18} className="text-accent" />
-                <span className="text-sm font-medium">San Francisco, CA</span>
+                <span className="text-sm font-medium">Cebu, Phil.</span>
               </div>
               <div className="flex items-center space-x-2 text-text-secondary">
                 <Icon name="Calendar" size={18} className="text-accent" />
@@ -89,8 +90,8 @@ const HeroSection = () => {
           >
             <div className="relative overflow-hidden rounded-2xl shadow-brand-lg">
               <Image
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=600&h=800&fit=crop&crop=face"
-                alt="Sarah Chen - Design Strategist"
+                src={image1}
+                alt="Don Migy - Graphic Designer"
                 className="w-full h-[600px] object-cover"
               />
               

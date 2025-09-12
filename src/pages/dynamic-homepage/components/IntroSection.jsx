@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import { services, validateServices } from '../../../constants/services';
 
 const IntroSection = () => {
   const achievements = [
@@ -33,28 +34,12 @@ const IntroSection = () => {
     }
   ];
 
-  const services = [
-    {
-      icon: "Palette",
-      title: "Brand Identity",
-      description: "Complete visual identity systems that capture your brand essence"
-    },
-    {
-      icon: "Smartphone",
-      title: "UI/UX Design",
-      description: "User-centered design that converts visitors into customers"
-    },
-    {
-      icon: "Globe",
-      title: "Web Development",
-      description: "High-performance websites built with modern technologies"
-    },
-    {
-      icon: "BarChart3",
-      title: "Strategy & Analytics",
-      description: "Data-driven design decisions that maximize business impact"
+  // Validate services data on component mount
+  useEffect(() => {
+    if (!validateServices(services)) {
+      console.error('Invalid services data: Each service must have icon, title, and description as non-empty strings.');
     }
-  ];
+  }, []);
 
   return (
     <section className="py-20 bg-background">
@@ -88,7 +73,7 @@ const IntroSection = () => {
             {/* Value Proposition */}
             <div className="bg-surface p-6 rounded-2xl mb-8">
               <h3 className="text-xl font-bold text-primary mb-4">
-                Why Choose DesignVault Pro?
+                Why Choose Alenton Perfect Touch?
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-start space-x-3">
@@ -197,7 +182,7 @@ const IntroSection = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4">
-              Core Services & Expertise
+              Tools & Software
             </h3>
             <p className="text-text-secondary max-w-2xl mx-auto">
               Comprehensive design solutions that cover every aspect of your digital presence
@@ -205,26 +190,32 @@ const IntroSection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services?.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-card p-6 rounded-xl shadow-brand hover:shadow-brand-lg transition-all duration-300 text-center group"
-              >
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                  <Icon name={service?.icon} size={24} className="text-accent group-hover:text-white" />
-                </div>
-                <h4 className="text-lg font-bold text-primary mb-2">
-                  {service?.title}
-                </h4>
-                <p className="text-text-secondary text-sm">
-                  {service?.description}
-                </p>
-              </motion.div>
-            ))}
+            {services?.length > 0 ? (
+              services.map((service, index) => (
+                <motion.div
+                  key={service?.id || index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-card p-6 rounded-xl shadow-brand hover:shadow-brand-lg transition-all duration-300 text-center group"
+                >
+                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                    <Icon name={service?.icon} size={24} className="text-accent group-hover:text-white" />
+                  </div>
+                  <h4 className="text-lg font-bold text-primary mb-2">
+                    {service?.title}
+                  </h4>
+                  <p className="text-text-secondary text-sm">
+                    {service?.description}
+                  </p>
+                </motion.div>
+              ))
+            ) : (
+              <div className="col-span-full text-center text-text-secondary">
+                No services available at the moment.
+              </div>
+            )}
           </div>
         </motion.div>
       </div>

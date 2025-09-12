@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
       company: 'TechFlow Solutions',
       avatar: 'https://randomuser.me/api/portraits/women/32.jpg',
       rating: 5,
-      content: `Working with DesignVault Pro was an absolute game-changer for our brand. Their communication throughout the project was exceptional - always responsive, professional, and genuinely invested in our success.\n\nThe collaborative process felt seamless, and they took the time to truly understand our vision before translating it into stunning visual identity. The final brand system exceeded our expectations and has significantly improved our market presence.`,
+      content: `Working with Alenton Perfect Touch was an absolute game-changer for our brand. Their communication throughout the project was exceptional - always responsive, professional, and genuinely invested in our success.\n\nThe collaborative process felt seamless, and they took the time to truly understand our vision before translating it into stunning visual identity. The final brand system exceeded our expectations and has significantly improved our market presence.`,
       projectType: 'Complete Brand Identity',
       timeline: '6 weeks',
       highlight: 'Exceptional communication and collaboration'
@@ -37,7 +37,7 @@ const TestimonialsSection = () => {
       company: 'Artisan Collective',
       avatar: 'https://randomuser.me/api/portraits/women/28.jpg',
       rating: 5,
-      content: `As a fellow creative professional, I have high standards for design partnerships. DesignVault Pro not only met but exceeded those expectations. Their process is thorough, their feedback incorporation is seamless, and their final deliverables are always pixel-perfect.\n\nWhat impressed me most was their willingness to iterate and refine until we achieved exactly what we envisioned. True collaborative partners.`,
+      content: `As a fellow creative professional, I have high standards for design partnerships. Alenton Perfect Touch not only met but exceeded those expectations. Their process is thorough, their feedback incorporation is seamless, and their final deliverables are always pixel-perfect.\n\nWhat impressed me most was their willingness to iterate and refine until we achieved exactly what we envisioned. True collaborative partners.`,
       projectType: 'Brand Refresh & Packaging',
       timeline: '10 weeks',
       highlight: 'Meticulous attention to detail and iteration'

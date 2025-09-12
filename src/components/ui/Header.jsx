@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '/assets/images/logo.png';
+import logos from '/assets/images/logo-footer.png';
 import Icon from '../AppIcon';
 import Button from './Button';
 
@@ -16,21 +18,25 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const navigationItems = [
     { name: 'Home', path: '/dynamic-homepage', icon: 'Home' },
-    { name: 'Portfolio', path: '/portfolio-showcase', icon: 'Briefcase' },
-    { name: 'Case Study', path: '/project-case-study', icon: 'FileText' },
+    { name: 'Portfolio', path: '#portfolio', icon: 'Briefcase' },
     { name: 'About', path: '/about-story', icon: 'User' },
-    { name: 'Services', path: '/services-workshop', icon: 'Settings' },
   ];
+  // const navigationItems = [
+  //   { name: 'Home', path: '/dynamic-homepage', icon: 'Home' },
+  //   { name: 'Portfolio', path: '/portfolio-showcase', icon: 'Briefcase' },
+  //   { name: 'Case Study', path: '/project-case-study', icon: 'FileText' },
+  //   { name: 'About', path: '/about-story', icon: 'User' },
+  //   { name: 'Services', path: '/services-workshop', icon: 'Settings' },
+  // ];
 
   const isActivePath = (path) => location?.pathname === path;
 
   const Logo = () => (
     <Link to="/dynamic-homepage" className="flex items-center space-x-3 group">
       <div className="relative">
-        <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-brand-gold rounded-xl flex items-center justify-center shadow-brand group-hover:shadow-brand-lg transition-all duration-300">
+        {/* <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-brand-gold rounded-xl flex items-center justify-center shadow-brand group-hover:shadow-brand-lg transition-all duration-300">
           <svg
             width="24"
             height="24"
@@ -63,14 +69,14 @@ const Header = () => {
               className="opacity-60"
             />
           </svg>
-        </div>
+        </div> */}
+        <img src={`${logo}`} alt="Logo" className="w-10 h-10 rounded-xl shadow-brand group-hover:shadow-brand-lg transition-all duration-300" />
         <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-accent/20 to-brand-gold/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
       <div className="hidden sm:block">
         <h1 className="text-xl font-bold text-primary group-hover:text-gradient transition-colors duration-300">
-          DesignVault Pro
+          <img src={`${logos}`} alt="Logo Footer" className="w-32 h-32" />
         </h1>
-        <p className="text-xs text-text-secondary font-medium">Strategic Design Solutions</p>
       </div>
     </Link>
   );

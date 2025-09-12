@@ -308,7 +308,7 @@ const ServicesWorkshop = () => {
         </div>
       </section>
       {/* Testimonials */}
-      <section id="testimonials" className="py-20">
+      {/* <section id="testimonials" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -318,7 +318,7 @@ const ServicesWorkshop = () => {
             <TestimonialSection />
           </motion.div>
         </div>
-      </section>
+      </section> */}
       {/* Project Brief Form */}
       <section id="project-brief" className="py-20 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -385,7 +385,7 @@ const ServicesWorkshop = () => {
                   <Icon name="Layers" size={24} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">DesignVault Pro</h3>
+                  <h3 className="text-xl font-bold">Alenton Perfect Touch</h3>
                   <p className="text-white/70 text-sm">Strategic Design Solutions</p>
                 </div>
               </div>
@@ -395,7 +395,7 @@ const ServicesWorkshop = () => {
               </p>
               <div className="flex items-center space-x-4">
                 <Icon name="Mail" size={20} className="text-white/60" />
-                <span className="text-white/80">hello@designvaultpro.com</span>
+                <span className="text-white/80">brhiajean81@email.com</span>
               </div>
             </div>
             
@@ -422,7 +422,7 @@ const ServicesWorkshop = () => {
           
           <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
             <p className="text-white/60 text-sm">
-              © {new Date()?.getFullYear()} DesignVault Pro. All rights reserved.
+              © {new Date()?.getFullYear()} Alenton Perfect Touch. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
               <Link to="#" className="text-white/60 hover:text-white transition-colors">

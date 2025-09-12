@@ -165,7 +165,7 @@ const ContactStudio = () => {
                   <Icon name="Layers" size={20} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">DesignVault Pro</h3>
+                  <h3 className="text-xl font-bold">Alenton Perfect Touch</h3>
                   <p className="text-sm opacity-75">Strategic Design Solutions</p>
                 </div>
               </div>
@@ -192,8 +192,8 @@ const ContactStudio = () => {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <div className="space-y-2 text-sm opacity-75">
-                <p>hello@designvaultpro.com</p>
-                <p>+1 (555) 123-4567</p>
+                <p>brhiajean81@email.com</p>
+                <p>+63 998-190-6895</p>
                 <p>123 Creative District<br />New York, NY 10001</p>
               </div>
             </div>
@@ -210,7 +210,7 @@ const ContactStudio = () => {
           </div>
           
           <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm opacity-75">
-            <p>&copy; {new Date()?.getFullYear()} DesignVault Pro. All rights reserved.</p>
+            <p>&copy; {new Date()?.getFullYear()} Alenton Perfect Touch. All rights reserved.</p>
           </div>
         </div>
       </footer>

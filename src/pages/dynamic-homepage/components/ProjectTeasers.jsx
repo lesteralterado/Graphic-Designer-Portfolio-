@@ -80,7 +80,7 @@ const ProjectTeasers = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-            Featured <span className="text-gradient">Projects</span>
+            Services <span className="text-gradient">Offered</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
             Discover how strategic design transforms businesses and drives measurable results 

@@ -99,11 +99,11 @@ const ProjectCTA = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm">
               <div className="flex items-center space-x-2">
                 <Icon name="Mail" size={16} className="text-brand-gold" />
-                <span>hello@designvaultpro.com</span>
+                <span>brhiajean81@email.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Icon name="Phone" size={16} className="text-brand-gold" />
-                <span>+1 (555) 123-4567</span>
+                <span>+63 998-190-6895</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Icon name="Calendar" size={16} className="text-brand-gold" />

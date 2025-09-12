@@ -20,7 +20,7 @@ const TestimonialSection = () => {
       position: "Creative Director, Bloom Agency",
       company: "Creative Agency Partnership",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      content: `Working with DesignVault Pro has transformed our capacity. Their white-label services are seamless, and clients never know the difference. Quality is consistently outstanding, and turnaround times are impressive.`,
+      content: `Working with Alenton Perfect Touch has transformed our capacity. Their white-label services are seamless, and clients never know the difference. Quality is consistently outstanding, and turnaround times are impressive.`,
       metrics: "300% capacity increase",
       service: "Agency Partnership",
       rating: 5

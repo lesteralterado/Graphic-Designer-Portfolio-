@@ -22,7 +22,7 @@ const StorySection = () => {
     {
       year: "2020",
       title: "Strategic Evolution",
-      description: "Launched DesignVault Pro to bridge the gap between beautiful design and business strategy. Focused on helping companies tell their stories through visual communication.",
+      description: "Launched Alenton Perfect Touch to bridge the gap between beautiful design and business strategy. Focused on helping companies tell their stories through visual communication.",
       image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
       icon: "Target"
     },
@@ -198,7 +198,7 @@ const StorySection = () => {
                 — and more importantly, how it transforms."
               </blockquote>
               <cite className="text-text-secondary font-medium">
-                — Sarah Chen, Founder of DesignVault Pro
+                — Sarah Chen, Founder of Alenton Perfect Touch
               </cite>
             </div>
           </div>

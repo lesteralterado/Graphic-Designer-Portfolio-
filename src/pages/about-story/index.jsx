@@ -16,14 +16,14 @@ const AboutStory = () => {
   return (
     <>
       <Helmet>
-        <title>About Sarah Chen - The Visionary Craftsperson | DesignVault Pro</title>
+        <title>About Sarah Chen - The Visionary Craftsperson | Alenton</title>
         <meta 
           name="description" 
-          content="Meet Sarah Chen, a design strategist who transforms businesses through strategic visual communication. 8+ years of experience, 50+ successful projects, and a passion for creating meaningful design solutions." 
+          content="Meet Sarah Chen, a design strategist who transforms businesses through strategic visual communication. 10+ years of experience, 50+ successful projects, and a passion for creating meaningful design solutions." 
         />
-        <meta name="keywords" content="design strategist, brand designer, UX designer, visual identity, Sarah Chen, DesignVault Pro" />
-        <meta property="og:title" content="About Sarah Chen - The Visionary Craftsperson | DesignVault Pro" />
-        <meta property="og:description" content="Discover the story behind DesignVault Pro and meet Sarah Chen, the design strategist who believes in the transformative power of strategic visual communication." />
+        <meta name="keywords" content="design strategist, brand designer, UX designer, visual identity, Sarah Chen, Alenton Perfect Touch" />
+        <meta property="og:title" content="About Sarah Chen - The Visionary Craftsperson | Alenton Perfect Touch" />
+        <meta property="og:description" content="Discover the story behind Alenton Perfect Touch and meet Sarah Chen, the design strategist who believes in the transformative power of strategic visual communication." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="/about-story" />
       </Helmet>
@@ -77,7 +77,7 @@ const AboutStory = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">DesignVault Pro</h3>
+                <h3 className="text-xl font-bold">Alenton Perfect Touch</h3>
               </div>
               
               <p className="text-white/80 mb-8 max-w-2xl mx-auto">
@@ -87,7 +87,7 @@ const AboutStory = () => {
               
               <div className="border-t border-white/20 pt-8">
                 <p className="text-white/60 text-sm">
-                  © {new Date()?.getFullYear()} DesignVault Pro. All rights reserved. 
+                  © {new Date()?.getFullYear()} Alenton Perfect Touch. All rights reserved. 
                   Crafted with passion by Sarah Chen.
                 </p>
               </div>

@@ -7,15 +7,15 @@ const ContactInfo = () => {
     {
       icon: 'Mail',
       label: 'Email',
-      value: 'hello@designvaultpro.com',
+      value: 'brhiajean81@email.com',
       description: 'Primary contact for project inquiries',
-      action: 'mailto:hello@designvaultpro.com',
+      action: 'mailto:brhiajean81@email.com',
       responseTime: 'Within 24 hours'
     },
     {
       icon: 'Phone',
       label: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+63 998-190-6895',
       description: 'Direct line for urgent matters',
       action: 'tel:+15551234567',
       responseTime: 'Business hours only'
@@ -23,7 +23,7 @@ const ContactInfo = () => {
     {
       icon: 'MessageCircle',
       label: 'WhatsApp',
-      value: '+1 (555) 123-4567',
+      value: '+63 998-190-6895',
       description: 'Quick questions and updates',
       action: 'https://wa.me/15551234567',
       responseTime: 'Same day response'
@@ -41,7 +41,7 @@ const ContactInfo = () => {
     {
       icon: 'Linkedin',
       label: 'LinkedIn',
-      handle: 'DesignVault Pro',
+      handle: 'Alenton Perfect Touch',
       url: 'https://linkedin.com/company/designvaultpro',
       description: 'Professional updates and insights'
     },

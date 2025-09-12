@@ -14,7 +14,7 @@ const TestimonialCards = () => {
       company: "TechFlow Inc.",
       avatar: "https://randomuser.me/api/portraits/women/44.jpg",
       logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=40&fit=crop",
-      content: `Working with DesignVault Pro transformed our entire digital presence. The strategic approach didn't just make us look better—it increased our conversion rate by 340% and generated $2.4M in additional revenue within 6 months.`,
+      content: `Working with Alenton Perfect Touch transformed our entire digital presence. The strategic approach didn't just make us look better—it increased our conversion rate by 340% and generated $2.4M in additional revenue within 6 months.`,
       metrics: {
         conversion: "+340%",
         revenue: "$2.4M",

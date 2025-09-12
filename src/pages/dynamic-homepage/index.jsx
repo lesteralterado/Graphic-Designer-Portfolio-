@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Header from '../../components/ui/Header';
 import HeroSection from './components/HeroSection';
+import About from './components/About';
+import PortfolioHighlights from './components/PortfolioHighlights';
 import ProjectTeasers from './components/ProjectTeasers';
 import FeaturedCarousel from './components/FeaturedCarousel';
 import IntroSection from './components/IntroSection';
@@ -14,7 +16,7 @@ const DynamicHomepage = () => {
     document.documentElement.style.scrollBehavior = 'smooth';
     
     // Set page title
-    document.title = 'DesignVault Pro - Strategic Design Solutions That Drive Results';
+    document.title = 'Alenton Perfect Touch - Strategic Design Solutions That Drive Results';
     
     // Meta description for SEO
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -59,6 +61,9 @@ const DynamicHomepage = () => {
         {/* Hero Section with Parallax */}
         <HeroSection />
 
+        <About />
+        <PortfolioHighlights />
+
         {/* Project Teasers Grid */}
         <ProjectTeasers />
 
@@ -82,7 +87,7 @@ const DynamicHomepage = () => {
             <div className="md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-10 h-10 bg-gradient-to-br from-accent via-brand-gold to-accent rounded-xl flex items-center justify-center">
-                  <svg
+                  {/* <svg
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
@@ -110,11 +115,11 @@ const DynamicHomepage = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-                  </svg>
+                  </svg> */}
+                  <img src="/assets/images/logo.png" alt="Logo" className="w-10 h-10 rounded-xl background-transparent" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">DesignVault Pro</h3>
-                  <p className="text-gray-400 text-sm">Strategic Design Solutions</p>
+                  <img src="/assets/images/logo-footer.png" alt="Alenton Perfect Touch" className="w-32 h-auto object-contain" />
                 </div>
               </div>
               <p className="text-gray-300 mb-4 max-w-md">
@@ -158,16 +163,16 @@ const DynamicHomepage = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>hello@designvaultpro.com</li>
-                <li>+1 (555) 123-4567</li>
-                <li>San Francisco, CA</li>
+                <li>brhiajean81@email.com</li>
+                <li>+63 998-190-6895</li>
+                <li>Cebu, Phil.</li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date()?.getFullYear()} DesignVault Pro. All rights reserved.
+              © {new Date()?.getFullYear()} Alenton Perfect Touch. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>

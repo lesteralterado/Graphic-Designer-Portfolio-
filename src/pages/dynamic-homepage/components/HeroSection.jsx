@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
+import logo from '/assets/images/logo.png';
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -62,13 +63,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-accent/10"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Animated Logo */}
-        <motion.div
+        {/* <motion.div
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-accent via-brand-gold to-accent rounded-2xl shadow-brand-lg">
+          <div className="inline-flex items-center justify-center w-24 h-24 rounded-2xl shadow-brand-lg">
             <svg
               width="48"
               height="48"
@@ -107,8 +108,9 @@ const HeroSection = () => {
                 transition={{ duration: 1.5, delay: 1.1 }}
               />
             </svg>
+            <img src={`${logo}`} alt="Logo" className="w-12 h-12 rounded-xl shadow-brand-lg bg-none" />
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Kinetic Typography */}
         <motion.h1
