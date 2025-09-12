@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.{html}",
+    "./src/**/*.html",
   ],
   // Enable JIT mode for better performance
   mode: 'jit',

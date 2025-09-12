@@ -1,11 +1,14 @@
 import React from 'react'
 import A2_1 from '/assets/images/A2_1.jpg'
 import A2_2 from '/assets/images/A2_2.jpg'
-import A11_Exterior from '/assets/images/A11_Exterior.jpg'
+import before_exterior from '/assets/images/before_exterior.jpg'
+import after_exterior from '/assets/images/after_exterior.jpg'
+import Before_interior from '/assets/images/Before_interior.jpg'
+import After_interior from '/assets/images/After_interior.jpg'
 import A13 from '/assets/images/A13.jpg'
 import A18 from '/assets/images/A18.jpg'
-import A5_1 from '/assets/images/A5_1.jpg'
-import A5 from '/assets/images/A5.jpg'
+// import A5_1 from '/assets/images/A5_1.jpg'
+// import A5 from '/assets/images/A5.jpg'
 import { motion } from 'framer-motion';
 
 const PortfolioHighlights = () => {
@@ -97,11 +100,11 @@ const PortfolioHighlights = () => {
           <div class="lg:w-1/2">
             <div class="image-compare h-[400px] rounded-xl overflow-hidden shadow-xl">
               <div class="before w-full h-full">
-                <img src={A11_Exterior} class="w-full h-full object-cover" alt="After: Enhanced Living Room"></img>
+                <img src={after_exterior} class="w-full h-full object-cover" alt="After: Enhanced Living Room"></img>
                 <span class="image-caption before-caption right-4">AFTER</span>
               </div>
               <div class="after">
-                <img src={A11_Exterior} class="w-full h-full object-cover" alt="After: Enhanced Living Room"></img>
+                <img src={before_exterior} class="w-full h-full object-cover" alt="After: Enhanced Living Room"></img>
                 <span class="image-caption after-caption left-4">BEFORE</span>
               </div>
             </div>
@@ -138,11 +141,11 @@ const PortfolioHighlights = () => {
           <div class="lg:w-1/2">
             <div class="image-compare h-[400px] rounded-xl overflow-hidden shadow-xl">
               <div class="before w-full h-full">
-                <img src={A2_1} class="w-full h-full object-cover" alt="After: Converted daytime photo to dramatic dusk scene"></img>
+                <img src={After_interior} class="w-full h-full object-cover" alt="After: Converted daytime photo to dramatic dusk scene"></img>
                 <span class="image-caption before-caption right-4">AFTER</span>
               </div>
               <div class="after">
-                <img src={A2_2} class="w-full h-full object-cover" alt="After: Converted daytime photo to dramatic dusk scene"></img>
+                <img src={Before_interior} class="w-full h-full object-cover" alt="After: Converted daytime photo to dramatic dusk scene"></img>
                 <span class="image-caption after-caption left-4">BEFORE</span>
               </div>
             </div>

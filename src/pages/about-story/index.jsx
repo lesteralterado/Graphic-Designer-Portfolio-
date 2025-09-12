@@ -26,11 +26,11 @@ const AboutStory = () => {
         <title>Alenton - The Visionary Craftsperson </title>
         <meta
           name="description"
-          content="Meet Don Migy, a design strategist who transforms businesses through strategic visual communication. 10+ years of experience, 50+ successful projects, and a passion for creating meaningful design solutions."
+          content="Meet Rhia Jean, a design strategist who transforms businesses through strategic visual communication. 10+ years of experience, 50+ successful projects, and a passion for creating meaningful design solutions."
         />
-        <meta name="keywords" content="design strategist, brand designer, UX designer, visual identity, Don Migy, Alenton Perfect Touch" />
-        <meta property="og:title" content="About Don Migy - The Visionary Craftsperson | Alenton Perfect Touch" />
-        <meta property="og:description" content="Discover the story behind Alenton Perfect Touch and meet Don Migy, the design strategist who believes in the transformative power of strategic visual communication." />
+        <meta name="keywords" content="design strategist, brand designer, UX designer, visual identity, Rhia Jean, Alenton Perfect Touch" />
+        <meta property="og:title" content="About Rhia Jean - The Visionary Craftsperson | Alenton Perfect Touch" />
+        <meta property="og:description" content="Discover the story behind Alenton Perfect Touch and meet Rhia Jean, the design strategist who believes in the transformative power of strategic visual communication." />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="#about" />
       </Helmet>
@@ -52,6 +52,8 @@ const AboutStory = () => {
         </main>
 
         {/* Footer */}
+        <section id='footer'>
+
         <footer className="bg-primary text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -119,6 +121,7 @@ const AboutStory = () => {
           </div>
         </div>
       </footer>
+        </section>
       </div>
     </Suspense>
   );

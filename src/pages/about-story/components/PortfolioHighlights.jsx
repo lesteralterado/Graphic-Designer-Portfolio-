@@ -50,11 +50,11 @@ const PortfolioHighlights = () => {
           <div class="lg:w-1/2">
             <div class="image-compare h-[400px] rounded-xl overflow-hidden shadow-xl">
               <div class="before w-full h-full">
-                <img src="/assets/images/A13.jpg" class="w-full h-full object-cover" alt="After: Enhanced Living Room" ></img>
+                <img src="/assets/images/After_interior.jpg" class="w-full h-full object-cover" alt="After: Enhanced Living Room" ></img>
                 <span class="image-caption before-caption right-4">AFTER</span>
               </div>
               <div class="after">
-                <img src="/assets/images/A18.jpg" class="w-full h-full object-cover" alt="Before: Original Living Room"></img>
+                <img src="/assets/images/Before_interior.jpg" class="w-full h-full object-cover" alt="Before: Original Living Room"></img>
                 <span class="image-caption after-caption left-4">BEFORE</span>
               </div>
             </div>
@@ -91,11 +91,11 @@ const PortfolioHighlights = () => {
           <div class="lg:w-1/2">
             <div class="image-compare h-[400px] rounded-xl overflow-hidden shadow-xl">
               <div class="before w-full h-full">
-                <img src="/assets/images/A11_Exterior.jpg" class="w-full h-full object-cover" alt="After: Enhanced Living Room"></img>
+                <img src="/assets/images/after_exterior.jpg" class="w-full h-full object-cover" alt="After: Enhanced Living Room"></img>
                 <span class="image-caption before-caption right-4">AFTER</span>
               </div>
               <div class="after">
-                <img src="/assets/images/A11_Exterior.jpg" class="w-full h-full object-cover" alt="After: Enhanced Living Room"></img>
+                <img src="/assets/images/before_exterior.jpg" class="w-full h-full object-cover" alt="After: Enhanced Living Room"></img>
                 <span class="image-caption after-caption left-4">BEFORE</span>
               </div>
             </div>

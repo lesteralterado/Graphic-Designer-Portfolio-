@@ -8,6 +8,7 @@ import Button from './Button';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -26,6 +27,32 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const sections = ['hero', 'portfolio', 'about'];
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
   
   const navigationItems = [
     { name: 'Home', path: '#hero', icon: 'Home' },
@@ -33,7 +60,7 @@ const Header = () => {
     { name: 'About', path: '#about', icon: 'User' },
   ];
 
-  const isActivePath = (path) => location?.hash === path || (location?.hash === '' && path === '#hero');
+  const isActivePath = (path) => `#${activeSection}` === path;
 
   const Logo = () => (
     <button onClick={() => handleScroll('hero')} className="flex items-center space-x-3 group">
@@ -90,7 +117,7 @@ const Header = () => {
               size="sm"
               iconName="MessageCircle"
               iconPosition="left"
-              onClick={() => handleScroll('contact')}
+              onClick={() => handleScroll('footer')}
             >
               Contact
             </Button>
@@ -99,7 +126,7 @@ const Header = () => {
               size="sm"
               iconName="ArrowRight"
               iconPosition="right"
-              onClick={() => handleScroll('contact')}
+              onClick={() => handleScroll('footer')}
             >
               Start Project
             </Button>

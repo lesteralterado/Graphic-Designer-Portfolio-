@@ -80,7 +80,7 @@ const About = () => {
                   <div className="relative overflow-hidden rounded-2xl shadow-brand-lg">
                     <Image
                       src={image1}
-                      alt="Don Migy - Graphic Designer"
+                      alt="Rhia Jean - Graphic Designer"
                       className="w-full h-[600px] object-cover"
                     />
                     

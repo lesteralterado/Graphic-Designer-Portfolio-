@@ -65,7 +65,7 @@ const About = () => {
                     </div>
                     <div className="flex items-center space-x-2 text-text-secondary">
                       <Icon name="Award" size={18} className="text-accent" />
-                      <span className="text-sm font-medium">50+ Projects Delivered</span>
+                      <span className="text-sm font-medium">10+ Projects Delivered</span>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -80,7 +80,7 @@ const About = () => {
                   <div className="relative overflow-hidden rounded-2xl shadow-brand-lg">
                     <Image
                       src={image1}
-                      alt="Don Migy - Graphic Designer"
+                      alt="Rhia Jean - Graphic Designer"
                       className="w-full h-[600px] object-cover"
                     />
                     

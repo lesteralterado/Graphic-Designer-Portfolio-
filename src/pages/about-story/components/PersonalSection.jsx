@@ -248,7 +248,7 @@ const PersonalSection = () => {
                 — one pixel at a time."
               </blockquote>
               <cite className="text-lg opacity-90">
-                — Don Migy
+                — Rhia Jean
               </cite>
             </div>
           </div>
