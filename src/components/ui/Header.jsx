@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '/assets/images/logo.png';
 import logos from '/assets/images/logo-footer.png';
 import Icon from '../AppIcon';
@@ -9,6 +9,14 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,58 +26,18 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
   const navigationItems = [
-    { name: 'Home', path: '/dynamic-homepage', icon: 'Home' },
+    { name: 'Home', path: '#hero', icon: 'Home' },
     { name: 'Portfolio', path: '#portfolio', icon: 'Briefcase' },
-    { name: 'About', path: '/about-story', icon: 'User' },
+    { name: 'About', path: '#about', icon: 'User' },
   ];
-  // const navigationItems = [
-  //   { name: 'Home', path: '/dynamic-homepage', icon: 'Home' },
-  //   { name: 'Portfolio', path: '/portfolio-showcase', icon: 'Briefcase' },
-  //   { name: 'Case Study', path: '/project-case-study', icon: 'FileText' },
-  //   { name: 'About', path: '/about-story', icon: 'User' },
-  //   { name: 'Services', path: '/services-workshop', icon: 'Settings' },
-  // ];
 
-  const isActivePath = (path) => location?.pathname === path;
+  const isActivePath = (path) => location?.hash === path || (location?.hash === '' && path === '#hero');
 
   const Logo = () => (
-    <Link to="/dynamic-homepage" className="flex items-center space-x-3 group">
+    <button onClick={() => handleScroll('hero')} className="flex items-center space-x-3 group">
       <div className="relative">
-        {/* <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-brand-gold rounded-xl flex items-center justify-center shadow-brand group-hover:shadow-brand-lg transition-all duration-300">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            className="text-white"
-          >
-            <path
-              d="M12 2L2 7L12 12L22 7L12 2Z"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="animate-pulse"
-            />
-            <path
-              d="M2 17L12 22L22 17"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="opacity-80"
-            />
-            <path
-              d="M2 12L12 17L22 12"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="opacity-60"
-            />
-          </svg>
-        </div> */}
         <img src={`${logo}`} alt="Logo" className="w-10 h-10 rounded-xl shadow-brand group-hover:shadow-brand-lg transition-all duration-300" />
         <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-accent/20 to-brand-gold/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
@@ -78,7 +46,7 @@ const Header = () => {
           <img src={`${logos}`} alt="Logo Footer" className="w-32 h-32" />
         </h1>
       </div>
-    </Link>
+    </button>
   );
 
   return (
@@ -95,10 +63,10 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
-            {navigationItems?.map((item) => (
-              <Link
+            {navigationItems?.map((item) => ( 
+              <button
                 key={item?.path}
-                to={item?.path}
+                onClick={() => handleScroll(item?.path?.slice(1))}
                 className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
                   isActivePath(item?.path)
                     ? 'text-accent bg-accent/10' :'text-text-primary hover:text-accent hover:bg-accent/5'
@@ -111,22 +79,30 @@ const Header = () => {
                 {isActivePath(item?.path) && (
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-accent rounded-full"></div>
                 )}
-              </Link>
+              </button>
             ))}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link to="/contact-studio">
-              <Button variant="outline" size="sm" iconName="MessageCircle" iconPosition="left">
-                Contact
-              </Button>
-            </Link>
-            <Link to="/contact-studio">
-              <Button className="btn-cta" size="sm" iconName="ArrowRight" iconPosition="right">
-                Start Project
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              size="sm"
+              iconName="MessageCircle"
+              iconPosition="left"
+              onClick={() => handleScroll('contact')}
+            >
+              Contact
+            </Button>
+            <Button
+              className="btn-cta"
+              size="sm"
+              iconName="ArrowRight"
+              iconPosition="right"
+              onClick={() => handleScroll('contact')}
+            >
+              Start Project
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -145,10 +121,12 @@ const Header = () => {
           <div className="max-w-7xl mx-auto px-4 py-4">
             <nav className="space-y-2">
               {navigationItems?.map((item) => (
-                <Link
+                <button
                   key={item?.path}
-                  to={item?.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    handleScroll(item?.path?.slice(1));
+                    setIsMobileMenuOpen(false);
+                  }}
                   className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                     isActivePath(item?.path)
                       ? 'text-accent bg-accent/10 border-l-2 border-accent' :'text-text-primary hover:text-accent hover:bg-accent/5'
@@ -159,21 +137,35 @@ const Header = () => {
                   {isActivePath(item?.path) && (
                     <div className="ml-auto w-2 h-2 bg-accent rounded-full"></div>
                   )}
-                </Link>
+                </button>
               ))}
             </nav>
             
             <div className="mt-6 pt-4 border-t border-border space-y-3">
-              <Link to="/contact-studio" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="outline" fullWidth iconName="MessageCircle" iconPosition="left">
-                  Contact Studio
-                </Button>
-              </Link>
-              <Link to="/contact-studio" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="btn-cta" fullWidth iconName="ArrowRight" iconPosition="right">
-                  Start Your Project
-                </Button>
-              </Link>
+              <Button
+                variant="outline"
+                fullWidth
+                iconName="MessageCircle"
+                iconPosition="left"
+                onClick={() => {
+                  handleScroll('contact');
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Contact Studio
+              </Button>
+              <Button
+                className="btn-cta"
+                fullWidth
+                iconName="ArrowRight"
+                iconPosition="right"
+                onClick={() => {
+                  handleScroll('contact');
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Start Your Project
+              </Button>
             </div>
           </div>
         </div>

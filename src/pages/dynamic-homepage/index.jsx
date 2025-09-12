@@ -62,7 +62,11 @@ const DynamicHomepage = () => {
         <HeroSection />
 
         <About />
-        <PortfolioHighlights />
+        
+        <section id='portfolio' className="py-20 bg-gradient-to-br from-primary via-primary/95 to-accent/10">
+          <PortfolioHighlights />
+        </section>
+       
 
         {/* Project Teasers Grid */}
         <ProjectTeasers />

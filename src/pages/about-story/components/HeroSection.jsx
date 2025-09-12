@@ -1,148 +1,154 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
-import image1 from '/assets/images/Web_09_DroneShot.jpg';
+import Button from '../../../components/ui/Button';
+import logo from '/assets/images/logo.png';
 
 const HeroSection = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e?.clientX / window.innerWidth) * 100,
+        y: (e?.clientY / window.innerHeight) * 100,
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    setIsLoaded(true);
+
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const particles = Array.from({ length: 50 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() * 4 + 1,
+    delay: Math.random() * 2,
+  }));
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-surface to-muted">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, var(--color-accent) 2px, transparent 2px),
-                           radial-gradient(circle at 75% 75%, var(--color-brand-gold) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px, 40px 40px'
-        }}></div>
-      </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Content */}
+    <section id="hero" className="relative min-h-screen bg-primary overflow-hidden flex items-center justify-center">
+      {/* Animated Background Particles */}
+      <div className="absolute inset-0">
+        {particles?.map((particle) => (
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            key={particle?.id}
+            className="absolute w-1 h-1 bg-accent/30 rounded-full"
+            style={{
+              left: `${particle?.x}%`,
+              top: `${particle?.y}%`,
+              width: `${particle?.size}px`,
+              height: `${particle?.size}px`,
+            }}
+            animate={{
+              x: [0, (mousePosition?.x - 50) * 0.1],
+              y: [0, (mousePosition?.y - 50) * 0.1],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: particle?.delay,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-accent/10"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Animated Logo */}
+        <motion.div
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="mb-8"
+        >
+          <div className="inline-flex items-center justify-center w-24 h-24 rounded-2xl shadow-brand-lg">
+            <img src={logo} alt="Logo" className="w-32 h-auto rounded-xl shadow-brand-lg bg-none fill-none" />
+          </div>
+        </motion.div>
+
+        {/* Kinetic Typography */}
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+        >
+          <span className="block">Design That</span>
+          <motion.span
+            className="block text-gradient bg-gradient-to-r from-accent via-brand-gold to-accent bg-clip-text text-transparent"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="flex items-center space-x-3"
-              >
-                <div className="w-12 h-1 bg-gradient-to-r from-accent to-brand-gold rounded-full"></div>
-                <span className="text-sm font-medium text-text-secondary uppercase tracking-wider">
-                  The Story Behind
-                </span>
-              </motion.div>
+            Drives Results
+          </motion.span>
+        </motion.h1>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight"
-              >
-                Where Vision Meets
-                <span className="block text-gradient">Craftsmanship</span>
-              </motion.h1>
+        {/* Manifesto */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+        >
+          Where creativity meets strategy. Transforming visions into visual reality through 
+          cutting-edge design that doesn't just look beautiful—it performs, converts, and drives 
+          measurable business growth.
+        </motion.p>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="text-lg text-text-secondary leading-relaxed max-w-xl"
-              >
-                Every pixel tells a story. Every design solves a problem. I'm Sarah Chen, 
-                a design strategist who believes that exceptional design isn't just about 
-                making things beautiful—it's about creating transformative experiences 
-                that drive real business results.
-              </motion.p>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex flex-wrap gap-6"
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+        >
+          <Link to="/portfolio-showcase">
+            <Button 
+              className="btn-cta text-lg px-8 py-4" 
+              iconName="ArrowRight" 
+              iconPosition="right"
             >
-              <div className="flex items-center space-x-2 text-text-secondary">
-                <Icon name="MapPin" size={18} className="text-accent" />
-                <span className="text-sm font-medium">Cebu, Phil.</span>
-              </div>
-              <div className="flex items-center space-x-2 text-text-secondary">
-                <Icon name="Calendar" size={18} className="text-accent" />
-                <span className="text-sm font-medium">8+ Years Experience</span>
-              </div>
-              <div className="flex items-center space-x-2 text-text-secondary">
-                <Icon name="Award" size={18} className="text-accent" />
-                <span className="text-sm font-medium">50+ Projects Delivered</span>
-              </div>
-            </motion.div>
-          </motion.div>
+              Explore Portfolio
+            </Button>
+          </Link>
+          <Link to="/contact-studio">
+            <Button 
+              variant="outline" 
+              className="text-white border-white hover:bg-white hover:text-primary text-lg px-8 py-4"
+              iconName="MessageCircle" 
+              iconPosition="left"
+            >
+              Start Project
+            </Button>
+          </Link>
+        </motion.div>
 
-          {/* Image */}
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+          className="absolute bottom-2 left-1/2 transform -translate-x-1/2"
+        >
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="flex flex-col items-center text-gray-400"
           >
-            <div className="relative overflow-hidden rounded-2xl shadow-brand-lg">
-              <Image
-                src={image1}
-                alt="Don Migy - Graphic Designer"
-                className="w-full h-[600px] object-cover"
-              />
-              
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"></div>
-              
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-6 right-6 bg-background/90 backdrop-blur-sm rounded-xl p-4 shadow-brand"
-              >
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-text-primary">Available for projects</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-6 left-6 bg-background/90 backdrop-blur-sm rounded-xl p-4 shadow-brand"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-accent to-brand-gold rounded-lg flex items-center justify-center">
-                    <Icon name="Palette" size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-text-primary">Design Philosophy</p>
-                    <p className="text-xs text-text-secondary">Form follows function</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Background decoration */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-accent/10 to-brand-gold/10 rounded-3xl -z-10 blur-xl"></div>
+            <span className="text-sm mb-2">Scroll to explore</span>
+            <Icon name="ChevronDown" size={24} />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
-      {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center space-y-2 text-text-secondary">
-          <span className="text-xs font-medium uppercase tracking-wider">Scroll to explore</span>
-          <Icon name="ChevronDown" size={20} />
-        </div>
-      </motion.div>
     </section>
   );
 };

@@ -279,7 +279,7 @@ const ProjectCaseStudy = () => {
     ],
     testimonial: {
       quote: "The transformation has been incredible. Our conversion rates have more than tripled, and customer feedback has been overwhelmingly positive. The team's strategic approach and attention to detail made all the difference.",
-      author: "Sarah Chen",
+      author: "Don Migy",
       position: "VP of Digital Experience",
       company: "TechFlow Commerce"
     },

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
-import logo from '/assets/images/logo.png';
+// import logo from '/assets/images/logo.png';  
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

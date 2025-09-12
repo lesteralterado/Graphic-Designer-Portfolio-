@@ -7,8 +7,8 @@
 @layer base {
   :root {
     /* Core System Colors */
-    --color-background: #ffffff; /* white */
-    --color-foreground: #2d3748; /* gray-700 */
+    --color-background: #2d3748; /* white */
+    --color-foreground: #ffffff; /* gray-700 */
     --color-border: #e2e8f0; /* gray-200 */
     --color-input: #ffffff; /* white */
     --color-ring: #ffa600; /* blue-600 */
@@ -18,8 +18,8 @@
     --color-card-foreground: #2d3748; /* gray-700 */
     --color-popover: #ffffff; /* white */
     --color-popover-foreground: #2d3748; /* gray-700 */
-    --color-muted: #f1f3f4; /* gray-100 */
-    --color-muted-foreground: #718096; /* gray-500 */
+    --color-muted: #2d3748; /* gray-100 */
+    --color-muted-foreground: #1a1a1a; /* gray-500 */
     
     /* Brand Colors */
     --color-primary: #1a1a1a; /* gray-900 */
@@ -35,16 +35,16 @@
     
     /* Status Colors */
     --color-success: #10b981; /* emerald-500 */
-    --color-success-foreground: #ffffff; /* white */
+    --color-success-foreground: #2d3748; /* white */
     --color-warning: #f59e0b; /* amber-500 */
-    --color-warning-foreground: #ffffff; /* white */
+    --color-warning-foreground: #2d3748; /* white */
     --color-error: #ef4444; /* red-500 */
-    --color-error-foreground: #ffffff; /* white */
+    --color-error-foreground: #2d3748; /* white */
     
     /* Surface & Text Hierarchy */
     --color-surface: #f1f3f4; /* gray-100 */
-    --color-text-primary: #2d3748; /* gray-700 */
-    --color-text-secondary: #718096; /* gray-500 */
+    --color-text-primary: #ffffff; /* gray-700 */
+    --color-text-secondary: #e0e5ee; /* gray-500 */
     
     /* Brand Accent */
     --color-brand-gold: #f4a261; /* orange-400 */
@@ -88,7 +88,7 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-accent to-brand-gold bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-foreground via-accent to-brand-gold bg-clip-text text-transparent;
   }
   
   .shadow-brand {

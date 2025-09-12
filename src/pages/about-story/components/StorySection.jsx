@@ -198,7 +198,7 @@ const StorySection = () => {
                 — and more importantly, how it transforms."
               </blockquote>
               <cite className="text-text-secondary font-medium">
-                — Sarah Chen, Founder of Alenton Perfect Touch
+                — Don Migy, Founder of Alenton Perfect Touch
               </cite>
             </div>
           </div>

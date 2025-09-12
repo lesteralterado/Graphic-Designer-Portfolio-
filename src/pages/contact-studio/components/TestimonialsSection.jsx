@@ -8,7 +8,7 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Sarah Chen',
+      name: 'Don Migy',
       role: 'Marketing Director',
       company: 'TechFlow Solutions',
       avatar: 'https://randomuser.me/api/portraits/women/32.jpg',

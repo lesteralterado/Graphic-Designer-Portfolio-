@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
+import logo from '/assets/images/logo.png';
 import { Helmet } from 'react-helmet';
-import Header from '../../components/ui/Header';
-import HeroSection from './components/HeroSection';
-import StorySection from './components/StorySection';
-import PhilosophySection from './components/PhilosophySection';
-import ExpertiseSection from './components/ExpertiseSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import PersonalSection from './components/PersonalSection';
+import { Link } from 'react-router-dom';
+import Icon from '../../components/AppIcon';
+
+const Header = lazy(() => import('../../components/ui/Header'));
+const HeroSection = lazy(() => import('./components/HeroSection'));
+const About = lazy(() => import('./components/About'));
+const PortfolioHighlights = lazy(() => import('./components/PortfolioHighlights'));
+const PhilosophySection = lazy(() => import('./components/PhilosophySection'));
+const PersonalSection = lazy(() => import('./components/PersonalSection'));
 
 const AboutStory = () => {
   useEffect(() => {
@@ -14,88 +17,110 @@ const AboutStory = () => {
   }, []);
 
   return (
-    <>
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <Icon name="Loader2" size={48} className="animate-spin text-primary" />
+      </div>
+    }>
       <Helmet>
-        <title>About Sarah Chen - The Visionary Craftsperson | Alenton</title>
-        <meta 
-          name="description" 
-          content="Meet Sarah Chen, a design strategist who transforms businesses through strategic visual communication. 10+ years of experience, 50+ successful projects, and a passion for creating meaningful design solutions." 
+        <title>Alenton - The Visionary Craftsperson </title>
+        <meta
+          name="description"
+          content="Meet Don Migy, a design strategist who transforms businesses through strategic visual communication. 10+ years of experience, 50+ successful projects, and a passion for creating meaningful design solutions."
         />
-        <meta name="keywords" content="design strategist, brand designer, UX designer, visual identity, Sarah Chen, Alenton Perfect Touch" />
-        <meta property="og:title" content="About Sarah Chen - The Visionary Craftsperson | Alenton Perfect Touch" />
-        <meta property="og:description" content="Discover the story behind Alenton Perfect Touch and meet Sarah Chen, the design strategist who believes in the transformative power of strategic visual communication." />
+        <meta name="keywords" content="design strategist, brand designer, UX designer, visual identity, Don Migy, Alenton Perfect Touch" />
+        <meta property="og:title" content="About Don Migy - The Visionary Craftsperson | Alenton Perfect Touch" />
+        <meta property="og:description" content="Discover the story behind Alenton Perfect Touch and meet Don Migy, the design strategist who believes in the transformative power of strategic visual communication." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="/about-story" />
+        <link rel="canonical" href="#about" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />
-        
-        <main>
+
+        <main className="pt-16 lg:pt-20">
+
           <HeroSection />
-          <StorySection />
+          <About />
+          <section id='portfolio' className="py-20 bg-gradient-to-br from-primary via-primary/95 to-accent/10">
+            <PortfolioHighlights />
+          </section>
+          {/* <StorySection /> */}
           <PhilosophySection />
-          <ExpertiseSection />
-          <TestimonialsSection />
+          {/* <ExpertiseSection /> */}
+          {/* <TestimonialsSection /> */}
           <PersonalSection />
         </main>
 
         {/* Footer */}
-        <footer className="bg-primary text-white py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <div className="flex items-center justify-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-accent via-brand-gold to-accent rounded-xl flex items-center justify-center shadow-brand">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="text-white"
-                  >
-                    <path
-                      d="M12 2L2 7L12 12L22 7L12 2Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M2 17L12 22L22 17"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="opacity-80"
-                    />
-                    <path
-                      d="M2 12L12 17L22 12"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="opacity-60"
-                    />
-                  </svg>
+        <footer className="bg-primary text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center space-x-3 mb-6">
+                {/* <div className="w-10 h-10 bg-gradient-to-br from-accent to-brand-gold rounded-xl flex items-center justify-center">
+                  <Icon name="Layers" size={24} className="text-white" />
+                </div> */}
+                <img src={logo} alt="Logo" className="w-10 h-10 rounded-xl shadow-brand" />
+                <div>
+                  <h3 className="text-xl font-bold">Alenton Perfect Touch</h3>
+                  <p className="text-white/70 text-sm">Strategic Design Solutions</p>
                 </div>
-                <h3 className="text-xl font-bold">Alenton Perfect Touch</h3>
               </div>
-              
-              <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-                Transforming visions into visual reality through strategic design solutions 
-                that drive measurable business results.
+              <p className="text-white/80 mb-6 max-w-md">
+                Transforming visions into visual reality through strategic design solutions
+                that drive measurable business outcomes.
               </p>
-              
-              <div className="border-t border-white/20 pt-8">
-                <p className="text-white/60 text-sm">
-                  © {new Date()?.getFullYear()} Alenton Perfect Touch. All rights reserved. 
-                  Crafted with passion by Sarah Chen.
-                </p>
+              <div className="flex items-center mb-4 space-x-4">
+                <Icon name="Mail" size={20} className="text-white/60" />
+                <span className="text-white/80">brhiajean81@email.com</span>
+              </div>
+              <div className="flex items-center space-x-4">
+                <Icon name="Phone" size={20} className="text-white/60" />
+                <span className="text-white/80">+63 998-190-6895</span>
               </div>
             </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-white/80">
+                <li><Link to="#" className="hover:text-white transition-colors">Brand Identity</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Digital Experience</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Marketing Campaigns</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Design Systems</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-white/80">
+                <li><Link to="#" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Portfolio</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Case Studies</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Contact</Link></li>
+              </ul>
+            </div>
           </div>
-        </footer>
+
+          <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
+            <p className="text-white/60 text-sm">
+              © {new Date()?.getFullYear()} Alenton Perfect Touch. All rights reserved.
+            </p>
+            <div className="flex items-center space-x-6 mt-4 md:mt-0">
+              <Link to="#" className="text-white/60 hover:text-white transition-colors">
+                <Icon name="Twitter" size={20} />
+              </Link>
+              <Link to="#" className="text-white/60 hover:text-white transition-colors">
+                <Icon name="Linkedin" size={20} />
+              </Link>
+              <Link to="#" className="text-white/60 hover:text-white transition-colors">
+                <Icon name="Instagram" size={20} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
       </div>
-    </>
+    </Suspense>
   );
 };
 

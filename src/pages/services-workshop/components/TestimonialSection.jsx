@@ -5,7 +5,7 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       id: 1,
-      client: "Sarah Chen",
+      client: "Don Migy",
       position: "CEO, TechFlow Solutions",
       company: "Growth-Stage SaaS",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",

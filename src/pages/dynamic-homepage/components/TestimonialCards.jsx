@@ -9,7 +9,7 @@ const TestimonialCards = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Chen",
+      name: "Don Migy",
       position: "CEO",
       company: "TechFlow Inc.",
       avatar: "https://randomuser.me/api/portraits/women/44.jpg",

@@ -6,7 +6,7 @@ import image1 from '/assets/images/Web_09_DroneShot.jpg';
 
 const About = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-surface to-muted">
+    <section className="py-20 bg-gradient-to-br from-primary via-primary/95 to-accent/10">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
               <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 {/* Content */}

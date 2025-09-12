@@ -3,7 +3,10 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{html}",
   ],
+  // Enable JIT mode for better performance
+  mode: 'jit',
   theme: {
     extend: {
       colors: {

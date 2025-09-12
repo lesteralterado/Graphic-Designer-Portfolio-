@@ -7,27 +7,27 @@ const PersonalSection = () => {
   const personalInterests = [
     {
       icon: "Camera",
-      title: "Photography",
-      description: "Capturing moments and compositions that inspire my design work. Street photography teaches me about human behavior and visual storytelling.",
-      image: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=200&fit=crop"
+      title: "Image Enhancement & Retouching",
+      description: "Adjust brightness, contrast, and sharpness Correct colors and white balance Remove camera dark spots and lens flare Remove noise and unwanted colors",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop"
     },
     {
       icon: "BookOpen",
-      title: "Continuous Learning",
-      description: "Currently reading 'The Design of Everyday Things' for the 5th time. Always exploring new design methodologies and business strategies.",
-      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=200&fit=crop"
+      title: "Object Removal",
+      description: "Seamlessly remove unwanted objects, clutter, or distractions from your property photos to create clean, professional images that highlight the best features.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=200&fit=crop"
     },
     {
       icon: "Mic",
-      title: "Speaking & Teaching",
-      description: "Regular speaker at design conferences and mentor to emerging designers. Passionate about sharing knowledge and building community.",
-      image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=300&h=200&fit=crop"
+      title: "HDR Blending",
+      description: "Combine multiple exposures for well-lit, balanced images that capture every detail of your property in perfect lighting conditions.",
+      image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=300&h=200&fit=crop"
     },
     {
       icon: "Palette",
-      title: "Art & Culture",
-      description: "Frequent visitor to galleries and museums. Art history and contemporary culture heavily influence my design perspective and creative process.",
-      image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=200&fit=crop"
+      title: "Day-to-Dusk Conversion",
+      description: "Transform daylight property shots into stunning twilight views that create emotional connections and showcase properties in their most appealing light.",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop"
     }
   ];
 
@@ -87,9 +87,8 @@ const PersonalSection = () => {
             </span>
             <div className="w-8 h-1 bg-gradient-to-r from-brand-gold to-accent rounded-full"></div>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-            The Person Behind
-            <span className="block text-gradient">The Pixels</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-6">
+            Services Offered
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
             Great design comes from authentic human experiences. Here's what shapes my perspective, 
@@ -126,7 +125,7 @@ const PersonalSection = () => {
                 <h3 className="text-xl font-bold text-primary group-hover:text-gradient transition-colors duration-300">
                   {interest?.title}
                 </h3>
-                <p className="text-text-secondary leading-relaxed">
+                <p className="text-secondary-foreground text-sm leading-relaxed">
                   {interest?.description}
                 </p>
               </div>
@@ -135,7 +134,7 @@ const PersonalSection = () => {
         </div>
 
         {/* Workspace Gallery */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -171,17 +170,17 @@ const PersonalSection = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Values & Beliefs */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="bg-gradient-to-br from-surface to-muted rounded-3xl p-8 sm:p-12 shadow-brand-lg relative overflow-hidden"
         >
-          {/* Background decoration */}
+          // Background decoration
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-accent/5 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-brand-gold/5 to-transparent rounded-full blur-3xl"></div>
 
@@ -221,7 +220,7 @@ const PersonalSection = () => {
               ))}
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Personal Quote */}
         <motion.div
@@ -249,7 +248,7 @@ const PersonalSection = () => {
                 — one pixel at a time."
               </blockquote>
               <cite className="text-lg opacity-90">
-                — Sarah Chen
+                — Don Migy
               </cite>
             </div>
           </div>

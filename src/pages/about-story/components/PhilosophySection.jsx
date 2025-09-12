@@ -67,7 +67,7 @@ const PhilosophySection = () => {
             </span>
             <div className="w-8 h-1 bg-gradient-to-r from-brand-gold to-accent rounded-full"></div>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-6">
             The Principles That
             <span className="block text-gradient">Guide My Work</span>
           </h2>
@@ -94,7 +94,7 @@ const PhilosophySection = () => {
                   <Icon name={principle?.icon} size={24} className="text-white" />
                 </div>
                 <div className="flex-1 space-y-3">
-                  <h3 className="text-xl font-bold text-primary group-hover:text-gradient transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-primary-foreground group-hover:text-gradient transition-colors duration-300">
                     {principle?.title}
                   </h3>
                   <p className="text-text-secondary leading-relaxed">
@@ -120,7 +120,7 @@ const PhilosophySection = () => {
 
           <div className="relative">
             <div className="text-center mb-12">
-              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4">
+              <h3 className="text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">
                 Core Values That Drive Excellence
               </h3>
               <p className="text-text-secondary max-w-2xl mx-auto">
@@ -144,7 +144,7 @@ const PhilosophySection = () => {
                       {value?.title?.charAt(0)}
                     </span>
                   </div>
-                  <h4 className="text-lg font-bold text-primary group-hover:text-gradient transition-colors duration-300">
+                  <h4 className="text-lg font-bold text-primary-foreground group-hover:text-gradient transition-colors duration-300">
                     {value?.title}
                   </h4>
                   <p className="text-sm text-text-secondary leading-relaxed">
