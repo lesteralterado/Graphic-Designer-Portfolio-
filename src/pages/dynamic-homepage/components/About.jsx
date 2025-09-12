@@ -65,7 +65,7 @@ const About = () => {
                     </div>
                     <div className="flex items-center space-x-2 text-text-secondary">
                       <Icon name="Award" size={18} className="text-accent" />
-                      <span className="text-sm font-medium">50+ Projects Delivered</span>
+                      <span className="text-sm font-medium">10k+ Projects Delivered</span>
                     </div>
                   </motion.div>
                 </motion.div>

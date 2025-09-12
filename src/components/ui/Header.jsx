@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '/assets/images/logo.png';
-import logos from '/assets/images/logo-footer.png';
+import logos from '/assets/images/untitled_design.png';
 import Icon from '../AppIcon';
 import Button from './Button';
 
@@ -29,7 +29,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const sections = ['hero', 'portfolio', 'about'];
+    const sections = ['hero', 'portfolio', 'about', 'gallery'];
     const observerOptions = {
       root: null,
       rootMargin: '-50% 0px -50% 0px',
@@ -56,8 +56,9 @@ const Header = () => {
   
   const navigationItems = [
     { name: 'Home', path: '#hero', icon: 'Home' },
-    { name: 'Portfolio', path: '#portfolio', icon: 'Briefcase' },
     { name: 'About', path: '#about', icon: 'User' },
+    { name: 'Portfolio', path: '#portfolio', icon: 'Briefcase' },
+    { name: 'Gallery', path: '#gallery', icon: 'Image' },
   ];
 
   const isActivePath = (path) => `#${activeSection}` === path;
@@ -70,7 +71,7 @@ const Header = () => {
       </div>
       <div className="hidden sm:block">
         <h1 className="text-xl font-bold text-primary group-hover:text-gradient transition-colors duration-300">
-          <img src={`${logos}`} alt="Logo Footer" className="w-32 h-32" />
+          <img src={`${logos}`} alt="Logo Footer" className="w-32 h-auto" />
         </h1>
       </div>
     </button>

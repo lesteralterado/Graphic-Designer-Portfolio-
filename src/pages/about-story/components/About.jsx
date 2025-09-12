@@ -2,7 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
-import image1 from '/assets/images/Web_09_DroneShot.jpg';
+import logo from '/assets/images/Alenton_logo.png';
+// import image1 from '/assets/images/Web_09_DroneShot.jpg';
 
 const About = () => {
   return (
@@ -65,7 +66,7 @@ const About = () => {
                     </div>
                     <div className="flex items-center space-x-2 text-text-secondary">
                       <Icon name="Award" size={18} className="text-accent" />
-                      <span className="text-sm font-medium">10+ Projects Delivered</span>
+                      <span className="text-sm font-medium">10k+ Projects Delivered</span>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -79,7 +80,7 @@ const About = () => {
                 >
                   <div className="relative overflow-hidden rounded-2xl shadow-brand-lg">
                     <Image
-                      src={image1}
+                      src={logo}
                       alt="Rhia Jean - Graphic Designer"
                       className="w-full h-[600px] object-cover"
                     />

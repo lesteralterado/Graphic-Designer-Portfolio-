@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { useEffect, lazy, Suspense, useState } from 'react';
 import logo from '/assets/images/logo.png';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
@@ -12,9 +12,58 @@ const PhilosophySection = lazy(() => import('./components/PhilosophySection'));
 const PersonalSection = lazy(() => import('./components/PersonalSection'));
 
 const AboutStory = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const galleryImages = [
+    '/assets/images/Gallery/DJI_20241004184746_0443_D.png',
+    '/assets/images/Gallery/IMG_9924.png',
+    '/assets/images/Gallery/Web_01.jpg',
+    '/assets/images/Gallery/Web_001.jpg',
+    '/assets/images/Gallery/Web_1g6.jpg',
+    '/assets/images/Gallery/Web_002.jpg',
+    '/assets/images/Gallery/Web_2j3.jpg',
+    '/assets/images/Gallery/Web_04.jpg',
+    '/assets/images/Gallery/Web_06.jpg',
+    '/assets/images/Gallery/Web_07.jpg',
+    '/assets/images/Gallery/Web_08.jpg',
+    '/assets/images/Gallery/Web_11.jpg',
+    '/assets/images/Gallery/Web_0011.jpg',
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % Math.ceil(galleryImages.length / 3));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + Math.ceil(galleryImages.length / 3)) % Math.ceil(galleryImages.length / 3));
+  };
+
+  const openModal = (imageSrc, index) => {
+    setSelectedImage(imageSrc);
+    setModalImageIndex(index);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
+  const nextModalImage = () => {
+    const nextIndex = (modalImageIndex + 1) % galleryImages.length;
+    setSelectedImage(galleryImages[nextIndex]);
+    setModalImageIndex(nextIndex);
+  };
+
+  const prevModalImage = () => {
+    const prevIndex = (modalImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    setSelectedImage(galleryImages[prevIndex]);
+    setModalImageIndex(prevIndex);
+  };
 
   return (
     <Suspense fallback={
@@ -49,6 +98,107 @@ const AboutStory = () => {
           {/* <ExpertiseSection /> */}
           {/* <TestimonialsSection /> */}
           <PersonalSection />
+
+          {/* Gallery Section */}
+          <section id="gallery" className="py-20 bg-background">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-6">
+                  <span className="block text-gradient">Sample Gallery</span>
+                </h2>
+                <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+                  A showcase of our creative work and design transformations
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {[
+                  '/assets/images/Gallery/DJI_20241004184746_0443_D.png',
+                  '/assets/images/Gallery/IMG_9924.png',
+                  '/assets/images/Gallery/Web_01.jpg',
+                  '/assets/images/Gallery/Web_001.jpg',
+                  '/assets/images/Gallery/Web_1g6.jpg',
+                  '/assets/images/Gallery/Web_002.jpg',
+                  '/assets/images/Gallery/Web_2j3.jpg',
+                  '/assets/images/Gallery/Web_04.jpg',
+                  '/assets/images/Gallery/Web_06.jpg',
+                  '/assets/images/Gallery/Web_07.jpg',
+                  '/assets/images/Gallery/Web_08.jpg',
+                  '/assets/images/Gallery/Web_11.jpg',
+                  '/assets/images/Gallery/Web_0011.jpg',
+                ].map((image, index) => (
+                  <div
+                    key={index}
+                    className="group relative overflow-hidden rounded-xl shadow-brand hover:shadow-brand-lg transition-all duration-300 cursor-pointer"
+                    onClick={() => openModal(image, index)}
+                  >
+                    <img
+                      src={image}
+                      alt={`Gallery image ${index + 1}`}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                        <Icon name="ZoomIn" size={24} className="text-white" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Image Modal */}
+          {selectedImage && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={closeModal}>
+              <div className="relative max-w-4xl max-h-screen p-4">
+                {/* Close Button */}
+                <button
+                  onClick={closeModal}
+                  className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-300"
+                  aria-label="Close modal"
+                >
+                  <Icon name="X" size={32} />
+                </button>
+
+                {/* Main Image */}
+                <img
+                  src={selectedImage}
+                  alt="Gallery image"
+                  className="max-w-full max-h-full object-contain rounded-lg"
+                  onClick={(e) => e.stopPropagation()}
+                />
+
+                {/* Navigation Buttons */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    prevModalImage();
+                  }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
+                  aria-label="Previous image"
+                >
+                  <Icon name="ChevronLeft" size={24} />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    nextModalImage();
+                  }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
+                  aria-label="Next image"
+                >
+                  <Icon name="ChevronRight" size={24} />
+                </button>
+
+                {/* Image Counter */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm">
+                  {modalImageIndex + 1} / {galleryImages.length}
+                </div>
+              </div>
+            </div>
+          )}
         </main>
 
         {/* Footer */}
