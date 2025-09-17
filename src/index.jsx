@@ -28,7 +28,7 @@ const preloadCriticalResources = () => {
   // Preload critical images
   const criticalImages = [
     '/assets/images/logo.png',
-    '/assets/images/logo-footer.png'
+    '/assets/images/logo_footer.png'
   ];
 
   criticalImages.forEach(src => {
