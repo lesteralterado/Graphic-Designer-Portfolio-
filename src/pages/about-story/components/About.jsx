@@ -2,8 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
-import logo from '../../../../public/assets/images/logo.png';
-// import image1 from '/assets/images/Web_09_DroneShot.jpg';
+import logo from '/assets/images/logo.png';
 
 const About = () => {
   return (
