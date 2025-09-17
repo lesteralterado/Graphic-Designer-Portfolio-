@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import Image from '../../../components/AppImage';
 import Icon from '../../../components/AppIcon';
-import logo from '/assets/images/Alenton_logo.png';
+import logo from '../../../../public/assets/images/logo.png';
 // import image1 from '/assets/images/Web_09_DroneShot.jpg';
 
 const About = () => {

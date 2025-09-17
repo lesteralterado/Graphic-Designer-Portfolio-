@@ -120,10 +120,10 @@ const DynamicHomepage = () => {
                       strokeLinejoin="round"
                     />
                   </svg> */}
-                  <img src="/assets/images/logo.png" alt="Logo" className="w-10 h-10 rounded-xl background-transparent" />
+                  <img src="../../../../public/assets/images/logo.png" alt="Logo" className="w-10 h-10 rounded-xl background-transparent" />
                 </div>
                 <div>
-                  <img src="/assets/images/logo_footer.png" alt="Alenton Perfect Touch" className="w-32 h-auto object-contain" />
+                  <img src="../../../../public/assets/images/logo_footer.png" alt="Alenton Perfect Touch" className="w-32 h-auto object-contain" />
                 </div>
               </div>
               <p className="text-gray-300 mb-4 max-w-md">

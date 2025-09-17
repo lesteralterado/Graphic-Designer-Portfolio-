@@ -1,5 +1,5 @@
 import React, { useEffect, lazy, Suspense, useState } from 'react';
-import logo from '/assets/images/logo.png';
+import logo from '../../../public/assets/images/logo.png';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Icon from '../../components/AppIcon';
